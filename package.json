@@ -1,0 +1,19 @@
+{
+  "name": "plarmm",
+  "version": "0.1.11",
+  "description": "Platformer",
+  "engines": {
+    "node": "6.11.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "4.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aFriendlySword/testserver-plarm"
+  }
+}
