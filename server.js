@@ -1,10 +1,31 @@
 var sys = require("sys"),
     http = require("http");
 
-http.createServer(function (request, response) {
-    response.sendHeader(200, { "Content-Type": "text/html" });
-    response.write("Hello World!");
-    response.close();
-}).listen(8080);
+var http = require('http');
+var server = http.createServer(function (request, response) { });
+
+server.listen(1234, function () {
+    console.log((new Date()) + ' Server is listening on port 1234');
+});
+
+var WebSocketServer = require('websocket').server;
+wsServer = new WebSocketServer({
+    httpServer: server
+});
+
+wsServer.on('request', function (r) {
+    // Code here to run on connection
+    var connection = r.accept('echo-protocol', r.origin);
+    var count = 0;
+    var clients = {};
+    var id = count++;
+    clients[id] = connection;
+
+    connection.on('message', function (message)) {
+    
+    }
+
+
+});
 
 
