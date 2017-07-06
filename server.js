@@ -15,6 +15,8 @@ wsServer = new WebSocketServer({
 
 wsServer.on('request', function (r) {
     // Code here to run on connection
+
+
     var connection = r.accept('echo-protocol', r.origin);
     var count = 0;
     var clients = {};
