@@ -21,6 +21,27 @@ wsServer.on('request', function (r) {
     var id = count++;
     clients[id] = connection;
 
+    const CONNECTED = "00";
+    const PLAYERMOVE = "100";
+    const ADDPLAYER = "101";
+    const REMPLAYER = "102";
+    const ADDSTONE = "201";
+    const REMSTONE = "202";
+    const ADDWOOD = "301";
+    const REMWOOD = "302";
+    const ADDCOIN = "401";
+    const REMCOIN = "402";
+    const JOINED_GAME = "1000";
+    const LEFT_GAME = "2000";
+    const MOUSE_COORDS = "500";
+    const MOVE_START = "0100";
+    const MOVE_STOP = "0010";
+    const JOIN = "1234";
+    const STONE = "20";
+    const WOOD = "30";
+    const COIN = "50";
+    const USER = "1337";
+
     clients[id].send(JSON.stringify({
         type: CONNECTED,
     }));
